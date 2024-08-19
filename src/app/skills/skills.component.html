@@ -1,0 +1,42 @@
+<!-- skills.component.html -->
+
+<div id="skills" class="section">
+  <div class="skills-container">
+    <h2 class="skills-title">Skills</h2>
+    <div class="skills-section">
+      <div class="skills-column">
+        <h3>Technologies</h3>
+        <div *ngFor="let skill of technologies" class="skill">
+          <div class="skill-name">{{ skill.name }}</div>
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="skill.level">
+              <div class="progress-bar-label">{{ skill.level }}%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-column">
+        <h3>Tools</h3>
+        <div *ngFor="let skill of tools" class="skill">
+          <div class="skill-name">{{ skill.name }}</div>
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="skill.level">
+              <div class="progress-bar-label">{{ skill.level }}%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-column">
+        <h3>Methodologies</h3>
+        <div *ngFor="let skill of methodologies" class="skill">
+          <div class="skill-name">{{ skill.name }}</div>
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="skill.level">
+              <div class="progress-bar-label">{{ skill.level }}%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

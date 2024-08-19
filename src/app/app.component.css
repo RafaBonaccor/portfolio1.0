@@ -1,0 +1,80 @@
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Stile di base per le sezioni */
+.section {
+  position: relative;
+  padding-top: 50px; /* Altezza della navbar */
+  margin-top: -60px; /* Altezza della navbar negativa per compensare lo spostamento */
+}
+
+.section::before {
+  content: '';
+  display: block;
+  height: 50px; /* Altezza della navbar */
+  margin-top: -60px; /* Altezza della navbar negativa per compensare lo spostamento */
+}
+
+/* Stili per il layout della home */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 20px;
+}
+
+.text-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title, .job {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title, .job {
+    font-size: 1.5rem;
+  }
+
+  .image-container {
+    order: -1; /* Porta la foto sopra il testo */
+    margin-bottom: 20px;
+  }
+
+  .text-container {
+    display: none; /* Nascondi il testo su schermi piccoli */
+  }
+
+  .image-container {
+    display: flex; /* Mostra la foto su schermi piccoli */
+  }
+}

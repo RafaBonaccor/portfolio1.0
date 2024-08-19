@@ -1,0 +1,29 @@
+<!-- contact.component.html -->
+
+<div class="contact-container">
+  <h2>Contact Me</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" name="name" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" name="email" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" class="form-control" name="message" ngModel required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+<footer>
+  <p>Connect with me on social media:</p>
+  <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+  <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+  <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+  <p>&copy; 2023 Your Name. All rights reserved.</p>
+</footer>

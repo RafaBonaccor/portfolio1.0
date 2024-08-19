@@ -1,0 +1,65 @@
+<div class="resume-container">
+  <div class="resume">
+    <div class="section education">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div *ngFor="let edu of education" class="event">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>{{ edu.degree }}</h3>
+            <p>{{ edu.description }}<br>{{ edu.institution }}</p>
+            <span>{{ edu.period }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section experiences">
+      <h2>Experiences</h2>
+      <div class="timeline">
+        <div *ngFor="let exp of experiences; let i = index" class="event">
+          <div class="circle"></div>
+          <div class="content">
+            <h3>{{ exp.title }}</h3>
+            <p>{{ exp.company }}</p>
+            <span>{{ exp.period }}</span>
+            <button class="btn-primary" (click)="toggleDetails(i)">
+              {{ exp.showDetails ? '- Hide' : '+ Detail' }}
+            </button>
+            
+            <div *ngIf="exp.showDetails" class="details">
+              <strong><p *ngFor="let mission of exp.missions">{{ mission }}</p></strong>
+              <p><strong>Technologies:</strong> {{ exp.technologies }}</p>
+            </div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section languages">
+      <h2>Languages</h2>
+      <p>
+        <img src="assets/flags/gb.svg" alt="English" class="flag-icon">
+        English: Fluent
+      </p>
+      <p>
+        <img src="assets/flags/es.svg" alt="Spanish" class="flag-icon">
+        Spanish : Fluent
+      </p>
+      <p>
+        <img src="assets/flags/it.svg" alt="Italian" class="flag-icon">
+        Italian: Native
+      </p>
+      <p>
+        <img src="assets/flags/br.svg" alt="Portuguese" class="flag-icon">
+        Portuguese: Native
+      </p>
+    </div>
+
+    <div class="section interests">
+      <h2>Center of interest</h2>
+      <p *ngFor="let interest of interests"><span>{{ interest.icon }} {{ interest.title }}</span> {{ interest.description }}</p>
+    </div>
+  </div>
+</div>

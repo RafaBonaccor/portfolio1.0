@@ -1,0 +1,68 @@
+/* contact.component.css */
+
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto; /* Centra verticalmente e orizzontalmente */
+  padding: 40px 20px; /* Aggiungi più padding */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; /* Allinea a sinistra le etichette e gli input */
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #e64a19;
+}
+
+/* Footer styles */
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ff5722;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #e64a19;
+}
