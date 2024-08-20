@@ -22,6 +22,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 
 export class ContactComponent {
+  name = '';
+  email = '';
+  message = '';
+  errorMessage = '';
+  successMessage = '';
   isVisible : boolean =  false;
   constructor(private http: HttpClient) {}
 
@@ -37,18 +42,27 @@ export class ContactComponent {
     }
   }
 
-  onSubmit(form: NgForm) {
-    const formData = form.value;
+  sendEmail() {
+    const emailData = {
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    };
 
-    this.http.post('http://localhost:3000/send-email', formData).subscribe(
-      response => {
-        console.log('Email sent successfully', response);
-        alert('Email sent successfully');
+    this.http.post('/api/send-mail', emailData).subscribe(
+      () => {
+        this.successMessage = 'Email inviata con successo!';
+        this.errorMessage = '';
+        this.name = '';
+        this.email = '';
+        this.message = '';
       },
-      error => {
-        console.error('Error sending email', error);
-        alert('Error sending email');
+      (error) => {
+        this.errorMessage = 'Errore durante l\'invio dell\'email.';
+        this.successMessage = '';
+        console.error('Errore:', error);
       }
     );
   }
+
 }
