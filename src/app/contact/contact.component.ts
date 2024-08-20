@@ -42,7 +42,7 @@ export class ContactComponent {
     }
   }
 
-  sendEmail() {
+  onSubmit(onForm : NgForm) {
     const emailData = {
       name: this.name,
       email: this.email,

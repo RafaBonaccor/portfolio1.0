@@ -7,7 +7,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { name, email, message } = req.body;
 
   const msg = {
-    to: 'tuo-email@dominio.com', // Cambia questo con il tuo indirizzo email
+    to: '+', // Cambia questo con il tuo indirizzo email
     from: 'noreply@tuo-dominio.com', // Un indirizzo email verificato su SendGrid
     subject: `Nuovo messaggio da ${name}`,
     text: `
