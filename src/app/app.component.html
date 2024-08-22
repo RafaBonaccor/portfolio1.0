@@ -5,6 +5,11 @@
   <div class="image-container">
     <img src="assets/SmartLatino.jpg" alt="Your Photo" class="profile-photo">
   </div>
+  <div class="cv-download-container">
+    <a href="assets\RafaelBonaccordiResume (2).pdf" download="Rafael_Bonaccordi_CV.pdf" class="btn btn-primary">
+      <i class="fas fa-download"></i> Download CV
+    </a>
+  </div>
   <div class="text-container">
     <h1 class="title">{{ typedTitle }}</h1>
     <h1 class="job">{{ typedJob }}</h1>
@@ -15,11 +20,9 @@
   <app-skills [ngClass]="{ 'hidden': !skillsVisible, 'visible': skillsVisible }"></app-skills>
 </div>
 
-
 <div id="experience" class="section">
   <app-experience></app-experience>
 </div>
-
 
 <div id="contact" class="section">
   <app-contact></app-contact>

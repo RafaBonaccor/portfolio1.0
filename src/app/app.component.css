@@ -20,11 +20,9 @@ html {
 /* Stili per il layout della home */
 .home-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
+  text-align: center;
   padding: 20px;
 }
 
@@ -46,12 +44,26 @@ html {
   margin-top: 20px;
 }
 
+@keyframes combinedEffect {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(15deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
 .profile-photo {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  border: 5px solid white;
-  object-fit: cover;
+  animation: combinedEffect 3s ease-in-out forwards;
 }
 
 /* Media query per schermi piccoli */
@@ -72,9 +84,20 @@ html {
 
   .text-container {
     display: none; /* Nascondi il testo su schermi piccoli */
+    padding-top: 30px;
   }
 
   .image-container {
     display: flex; /* Mostra la foto su schermi piccoli */
   }
+
+  .cv-download-container a:hover {
+    background-color: white;
+    color: #333;
+  }
+  
+  .text-container .title, .text-container .job {
+    margin: 10px 0;
+  }
+  
 }
